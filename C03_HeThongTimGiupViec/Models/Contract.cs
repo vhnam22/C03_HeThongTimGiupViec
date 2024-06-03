@@ -13,9 +13,10 @@ namespace C03_HeThongTimGiupViec.Models
         public int ContractId { get; set; }
         public int? PostId { get; set; }
         public string HandymanId { get; set; }
+        public double Price { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public string Status { get; set; } = null!;
+        public int Status { get; set; } 
 
         public virtual Account? Handyman { get; set; }
         public virtual Post? Post { get; set; }

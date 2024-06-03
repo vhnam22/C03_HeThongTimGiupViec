@@ -1,5 +1,8 @@
 ﻿using C03_HeThongTimGiupViec.Models;
-using C03_HeThongTimGiupViec.Services;
+using C03_HeThongTimGiupViec.Repositories;
+using C03_HeThongTimGiupViec.Repositories.Interface;
+using C03_HeThongTimGiupViec.Repository;
+using C03_HeThongTimGiupViec.Repository.Interface;
 using C03_HeThongTimGiupViec.ViewModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -33,8 +36,20 @@ namespace C03_HeThongTimGiupViec
             {
                 option.UseSqlServer(Configuration.GetConnectionString("SqlConnection"));
             });
-            services.AddTransient<IDataService, RoleDataService>();
-            services.AddTransient<IUserServices, UserServices>();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); 
+                options.Cookie.HttpOnly = true; 
+                options.Cookie.IsEssential = true; 
+            });
+            services.AddTransient<IDataRepository, RoleDataRepository>();
+            services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<IServicesRepository, ServicesRepository>();
+            services.AddTransient<IPostRepository, PostRepository>();
+            services.AddTransient<IComplaintRepository, ComplaintRepository>();
+            services.AddTransient<ISlideRepository, SlideRepository>();
+            services.AddTransient<IReviewRepository, ReviewRepository>();
+
             ConfigureJWT(services);
 
         }

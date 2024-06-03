@@ -1,4 +1,5 @@
 ﻿using C03_HeThongTimGiupViec.Models;
+using C03_HeThongTimGiupViec.Repository.Interface;
 using C03_HeThongTimGiupViec.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
@@ -7,17 +8,16 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace C03_HeThongTimGiupViec.Services
+namespace C03_HeThongTimGiupViec.Repository
 {
-    public class UserServices: IUserServices
+    public class AccountRepository: IAccountRepository
     {
         private UserManager<Account> _userManager;
         public readonly SignInManager<Account> _signInManager;
         public readonly AdminAccount _adminAccount;
         public readonly JwtSetting _jwtSetting;
-        public readonly C03_HeThongTimGiupViecContext _context;
-
-        public UserServices(UserManager<Account> userManager,
+        private readonly C03_HeThongTimGiupViecContext _context;
+        public AccountRepository(UserManager<Account> userManager,
             SignInManager<Account> signInManager,
             IOptionsMonitor<AdminAccount> adminAccount, IOptionsMonitor<JwtSetting> jwtSetting,
             C03_HeThongTimGiupViecContext context)
@@ -27,6 +27,61 @@ namespace C03_HeThongTimGiupViec.Services
             _adminAccount = adminAccount.CurrentValue;
             _jwtSetting = jwtSetting.CurrentValue;
             _context = context;
+        }
+
+        //Get all account
+        public List<Account> GetAllAccount()
+        {
+            List<Account> accLst = _context.Accounts.ToList();
+            return accLst;
+        }
+
+        //Get account by account id
+        public Account GetAccountById(string id)
+        {
+            try
+            {
+                if (id.IsNullOrEmpty()) return null;
+                Guid accId = Guid.Parse(id);
+                Account acc = _context.Accounts.FirstOrDefault(x => x.AccountId == accId);
+                return acc;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Update account info
+        public bool UpdateAccount(Account account)
+        {
+            try
+            {
+                if (account != null)
+                {
+                    Account acc = GetAccountById(account.AccountId.ToString());
+                    if (acc != null)
+                    {
+                        acc.Email = account.Email;
+                        acc.UserName = account.UserName;
+                        acc.PasswordHash = account.PasswordHash;
+                        acc.UserName = account.UserName;
+                        acc.FullName = account.FullName;
+                        acc.PhoneNumber = account.PhoneNumber;
+                        acc.City = account.City;
+                        acc.Address = account.Address;
+                        acc.ProfilePicture = account.ProfilePicture;
+                        acc.Status = account.Status;
+                        _context.SaveChanges();
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task<string> Login(LoginVM model)
@@ -71,7 +126,8 @@ namespace C03_HeThongTimGiupViec.Services
         }
         private async Task<Account?> ValidLogin(LoginVM user)
         {
-            var userIdentity = await _userManager.FindByEmailAsync(user.Email);
+            string email = user.Email;
+            var userIdentity = await _userManager.FindByEmailAsync(email);
             if (userIdentity == null || !await _userManager.CheckPasswordAsync(userIdentity, user.Password))
             {
                 if (user.Email == _adminAccount.Email && user.Password == _adminAccount.Password)
@@ -88,9 +144,9 @@ namespace C03_HeThongTimGiupViec.Services
                         City = "",
                         ZipCode = "",
                         ProfilePicture = "",
-                        Status = "1"
-                    }; 
-                    var r = await _userManager.CreateAsync(admin, _adminAccount.Password);
+                        Status = 1
+                    };
+                    await _userManager.CreateAsync(admin, _adminAccount.Password);
                     await _userManager.AddToRoleAsync(admin, "Admin");
                 }
                 else
@@ -101,9 +157,9 @@ namespace C03_HeThongTimGiupViec.Services
             return userIdentity;
         }
 
-        public async Task<RegisterVM> Register(RegisterVM model)
+        public async Task<RegisterVM> Register(RegisterVM model, string role)
         {
-            
+
             var userExistMail = await _userManager.FindByEmailAsync(model.Email);
             var userExistName = await _userManager.FindByNameAsync(model.Username);
             if (userExistMail != null || userExistName != null)
@@ -122,10 +178,10 @@ namespace C03_HeThongTimGiupViec.Services
                 City = "",
                 ZipCode = "",
                 ProfilePicture = "",
-                Status = "1"
+                Status = 1
             };
             var resultCreateUser = await _userManager.CreateAsync(user, model.Password);
-            await _userManager.AddToRoleAsync(user, "Host");
+            await _userManager.AddToRoleAsync(user, role);
 
             if (!resultCreateUser.Succeeded)
             {

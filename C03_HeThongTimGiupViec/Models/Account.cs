@@ -26,7 +26,8 @@ namespace C03_HeThongTimGiupViec.Models
         public string? Address { get; set; }
         public string? ZipCode { get; set; }
         public string? ProfilePicture { get; set; }
-        public string Status { get; set; } = null!;
+        public int Status { get; set; }
+        public string Email { get; set; }
         public virtual ICollection<Complaint> ComplaintComplaintAgainstNavigations { get; set; }
         public virtual ICollection<Complaint> ComplaintComplaintByNavigations { get; set; }
         public virtual ICollection<Contract> Contracts { get; set; }

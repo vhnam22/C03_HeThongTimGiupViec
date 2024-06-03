@@ -11,6 +11,7 @@ namespace C03_HeThongTimGiupViec.Models
         public string? MessageText { get; set; }
         public DateTime? SentOn { get; set; }
         public DateTime? ReadOn { get; set; }
+        public int Status { get; set; } 
 
         public virtual Account? ReceiveByAccount { get; set; }
         public virtual Account? SentByAccount { get; set; }

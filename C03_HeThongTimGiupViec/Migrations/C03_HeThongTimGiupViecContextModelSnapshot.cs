@@ -46,6 +46,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .IsUnicode(false)
                         .HasColumnType("varchar(255)");
@@ -92,11 +93,8 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
@@ -121,8 +119,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.HasIndex(new[] { "Email" }, "UQ__Accounts__A9D10534B6EC2145")
-                        .IsUnique()
-                        .HasFilter("[Email] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -157,11 +154,20 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<bool?>("IsCorect")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("ResponseComplaintId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.HasKey("ComplaintId");
 
                     b.HasIndex("ComplaintAgainst");
 
                     b.HasIndex("ComplaintBy");
+
+                    b.HasIndex("ResponseComplaintId");
 
                     b.ToTable("Complaints");
                 });
@@ -187,14 +193,14 @@ namespace C03_HeThongTimGiupViec.Migrations
                         .HasColumnType("int")
                         .HasColumnName("PostID");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime?>("StartDate")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
 
                     b.HasKey("ContractId");
 
@@ -230,6 +236,9 @@ namespace C03_HeThongTimGiupViec.Migrations
 
                     b.Property<DateTime?>("SentOn")
                         .HasColumnType("datetime");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("MessageId");
 
@@ -289,15 +298,15 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<DateTime?>("PostDate")
                         .HasColumnType("datetime");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int?>("ServiceId")
                         .HasColumnType("int")
                         .HasColumnName("ServiceID");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
 
                     b.HasKey("PostId");
 
@@ -356,6 +365,10 @@ namespace C03_HeThongTimGiupViec.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
+
+                    b.Property<string>("Logo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ServiceName")
                         .IsRequired()
@@ -561,9 +574,18 @@ namespace C03_HeThongTimGiupViec.Migrations
                         .IsRequired()
                         .HasConstraintName("FK__Complaint__Compl__5165187F");
 
+                    b.HasOne("C03_HeThongTimGiupViec.Models.Complaint", "ResponseComplaint")
+                        .WithMany()
+                        .HasForeignKey("ResponseComplaintId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_Complaint_ResponseComplaint");
+
                     b.Navigation("ComplaintAgainstNavigation");
 
                     b.Navigation("ComplaintByNavigation");
+
+                    b.Navigation("ResponseComplaint");
                 });
 
             modelBuilder.Entity("C03_HeThongTimGiupViec.Models.Contract", b =>

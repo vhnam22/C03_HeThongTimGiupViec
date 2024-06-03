@@ -6,6 +6,7 @@ namespace C03_HeThongTimGiupViec.Models
 {
     public partial class Complaint
     {
+
         public int ComplaintId { get; set; }
         public string ComplaintBy { get; set; }
         public string ComplaintAgainst { get; set; }
@@ -13,6 +14,10 @@ namespace C03_HeThongTimGiupViec.Models
         public string? Attachments { get; set; }
         public DateTime? ComplaintDate { get; set; }
         public bool? IsCorect { get; set; }
+        public int Status { get; set; }
+        public int? ResponseComplaintId { get; set; }
+
+        public virtual Complaint ResponseComplaint { get; set; }
 
         [ForeignKey(nameof(ComplaintBy))]
         public virtual Account ComplaintAgainstNavigation { get; set; }
