@@ -68,7 +68,7 @@ namespace C03_HeThongTimGiupViec
             });
 
             var scope = app.Services.CreateScope(); 
-            var services = scope.ServiceProvider.GetServices<IDataService>();
+            var services = scope.ServiceProvider.GetServices<IDataRepository>();
 
             foreach (var service in services)
             {
