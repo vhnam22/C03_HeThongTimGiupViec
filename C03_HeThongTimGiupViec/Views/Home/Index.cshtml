@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<form action="/home/Register" method="post">
+    <input name="email" type="email" class="col-11 mx-auto" placeholder="E-mail" required minlength="10" maxlength="50">
+    <div class="emailError col-11 mx-auto "></div>
+    <input name="userName" type="text" class="userTxt col-11 mx-auto" placeholder="UserName" required minlength="3" maxlength="30">
+    <div class="userError col-11 mx-auto "></div>
+    <input name="fullName" type="text" class="nameTxt col-11 mx-auto" placeholder="FullName" required minlength="3" maxlength="30">
+    <div class="nameError col-11 mx-auto "></div>
+    <input name="address" type="text" class="addressTxt col-11 mx-auto" placeholder="Address" required minlength="3" maxlength="30">
+    <div class="addressError col-11 mx-auto "></div>
+    <input name="password" type="password" class="pass col-11 mx-auto" placeholder="Password" required minlength="6" maxlength="30">
+    <div class="passError col-11 mx-auto "></div>
+    <input type="password" class="rePass col-11 mx-auto" placeholder="Re Password" required minlength="6" maxlength="30">
+    <div class="rePassError col-11 mx-auto "></div>
+    @if (ViewBag.Message != null)
+    {
+        <div>@ViewBag.Message</div>
+    }
+    <div></div>
+    <input type="submit" id="RegisterBtn" value="Register" class="col-11 mx-auto" />
+</form>
