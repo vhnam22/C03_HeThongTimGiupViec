@@ -4,6 +4,7 @@ using C03_HeThongTimGiupViec.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C03_HeThongTimGiupViec.Migrations
 {
     [DbContext(typeof(C03_HeThongTimGiupViecContext))]
-    partial class C03_HeThongTimGiupViecContextModelSnapshot : ModelSnapshot
+    [Migration("20240605042023_Attribute5")]
+    partial class Attribute5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,6 +31,9 @@ namespace C03_HeThongTimGiupViec.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<Guid>("AccountId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Address")
                         .HasMaxLength(255)
@@ -93,9 +98,6 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalStar")
-                        .HasColumnType("int");
-
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -149,8 +151,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("Description")
-                        .IsUnicode(true)
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("text");
 
                     b.Property<bool?>("IsCorect")
                         .HasColumnType("bit");
@@ -222,8 +223,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MessageId"), 1L, 1);
 
                     b.Property<string>("MessageText")
-                        .IsUnicode(true)
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("ReadOn")
                         .HasColumnType("datetime");
@@ -299,8 +299,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
-                        .IsUnicode(true)
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("PostDate")
                         .HasColumnType("datetime");
@@ -338,8 +337,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ReviewId"), 1L, 1);
 
                     b.Property<string>("Comment")
-                        .IsUnicode(true)
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("text");
 
                     b.Property<int?>("Rating")
                         .HasColumnType("int");
@@ -376,8 +374,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ServiceId"), 1L, 1);
 
                     b.Property<string>("Description")
-                        .IsUnicode(true)
-                        .HasColumnType("NVARCHAR(MAX)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Logo")
                         .IsRequired()
@@ -386,11 +383,8 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<string>("ServiceName")
                         .IsRequired()
                         .HasMaxLength(255)
-                        .IsUnicode(true)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<int>("ViewCount")
-                        .HasColumnType("int");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("ServiceId");
 

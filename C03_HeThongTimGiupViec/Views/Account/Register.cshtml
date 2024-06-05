@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<link rel="stylesheet" href="~/css/style1.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<form class="login-page d-flex justify-content-center">
+    <div class="login-body">
+        <div class="login-title">Register</div>
+        <div class="d-flex justify-content-center">
+            <div class="role-btn active" onclick="activeBtn(this,2)">
+                <i class="fa-solid fa-hand-sparkles"></i>
+                <span>Host</span>
+            </div>
+            <div class="role-btn" onclick="activeBtn(this,3)">
+                <i class="fa-solid fa-house-chimney-user"></i>
+                <span>Housemaid</span>
+            </div>
+        </div>
+        <input id="role-input" type="text" name="role" hidden value="2">
+        <div class="input-form">
+            <input type="text" placeholder="Email" />
+        </div>
+        <div class="input-form">
+            <input type="text" placeholder="UserName" />
+        </div>
+        <div class="input-form">
+            <input type="text" placeholder="FullName" />
+        </div>
+        <div class="input-form">
+            <input type="text" placeholder="Address" />
+        </div>
+        <div class="input-form">
+            <input type="text" placeholder="Password" />
+        </div>
+        <div class="input-form">
+            <input type="text" placeholder="Confirm password" />
+        </div>
+        <div class="login-submit">
+            <input type="submit" value="Register now" />
+        </div>
+        <div class="text-center">Already have an account? <a class="register-link">Login</a></div>
+    </div>
+</form>
+
+<script>
+    const roleBtns = document.querySelectorAll('.role-btn');
+    const roleInput = document.getElementById('role-input');
+
+    function activeBtn(element, roleId) {
+        roleBtns.forEach(btn => {
+            if (btn.classList.contains('active')) {
+                btn.classList.remove('active');
+            }
+        })
+        console.log(this);
+        element.classList.add('active');
+        roleInput.value = roleId;
+    }
+</script>

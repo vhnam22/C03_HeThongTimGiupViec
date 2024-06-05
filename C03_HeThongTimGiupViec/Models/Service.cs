@@ -15,6 +15,7 @@ namespace C03_HeThongTimGiupViec.Models
         public string ServiceName { get; set; } = null!;
         public string? Description { get; set; }
         public string Logo { get; set; }
+        public int ViewCount { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }
 

@@ -5,12 +5,28 @@
       "PackagePath": "staticwebassets\\C03_HeThongTimGiupViec.bundle.scp.css"
     },
     {
+      "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\admin.jpg",
+      "PackagePath": "staticwebassets\\Images\\admin.jpg"
+    },
+    {
+      "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\handyman.png",
+      "PackagePath": "staticwebassets\\Images\\handyman.png"
+    },
+    {
+      "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\handyman2.jpg",
+      "PackagePath": "staticwebassets\\Images\\handyman2.jpg"
+    },
+    {
       "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\css\\style1.css",
+      "PackagePath": "staticwebassets\\css\\style1.css"
     },
     {
       "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\favicon.ico",

@@ -1,0 +1,117 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.login-page {
+    width: 100%;
+}
+
+    .login-page .login-body {
+        background: #f4f7f7;
+        width: 500px;
+        margin-top: 100px;
+        border-radius: 10px;
+        padding: 35px 40px 32px;
+        font-size: 14px;
+    }
+
+    .login-page .login-title {
+        font-weight: 600;
+        font-size: 28px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 14px;
+        margin-bottom: 30px;
+    }
+
+    .login-page .input-form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+        .login-page .input-form input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+        }
+
+    .login-page .login-remember {
+        color: #03a84e;
+    }
+
+    .login-page .forgot-pass:hover {
+        color: #025D2B;
+        cursor: pointer;
+    }
+
+    .login-page .login-checkbox {
+        margin-right: 10px;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #fff;
+    }
+
+        .login-page .login-checkbox:hover {
+            cursor: pointer;
+        }
+
+    .login-page .forgot-pass {
+        color: #03a84e;
+    }
+
+    .login-page .login-submit {
+        width: 100%;
+    }
+
+        .login-page .login-submit input {
+            width: 100%;
+            margin: 28px 0 40px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            background-color: #03a84e;
+            color: #fff;
+            font-weight: 500;
+        }
+
+            .login-page .login-submit input:hover {
+                border: 1px solid #03a84e;
+                background: #fff;
+                color: #03a84e;
+            }
+
+    .login-page .register-link {
+        color: #03a84e;
+        text-decoration: none
+    }
+
+        .login-page .register-link:hover {
+            color: #025D2B;
+            cursor: pointer;
+        }
+
+    .login-page .role-btn {
+        height: 40px;
+        width: 150px;
+        text-align: center;
+        background-color: #fff;
+        line-height: 40px;
+        margin: 0 20px 20px;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        font-weight: 600;
+    }
+
+        .login-page .role-btn:hover {
+            cursor: pointer;
+        }
+
+        .login-page .role-btn.active {
+            background: #03a84e;
+            color: #fff;
+        }

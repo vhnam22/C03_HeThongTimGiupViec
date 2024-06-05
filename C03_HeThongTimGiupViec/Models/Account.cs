@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using C03_HeThongTimGiupViec.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 
@@ -18,8 +19,6 @@ namespace C03_HeThongTimGiupViec.Models
             ReviewReviewers = new HashSet<Review>();
             Services = new HashSet<Service>();
         }
-
-        public Guid AccountId { get; set; }
         public string? FullName { get; set; }
         public string? PhoneNumber { get; set; }
         public string? City { get; set; }
@@ -28,6 +27,7 @@ namespace C03_HeThongTimGiupViec.Models
         public string? ProfilePicture { get; set; }
         public int Status { get; set; }
         public string Email { get; set; }
+        public int TotalStar { get; set; }
         public virtual ICollection<Complaint> ComplaintComplaintAgainstNavigations { get; set; }
         public virtual ICollection<Complaint> ComplaintComplaintByNavigations { get; set; }
         public virtual ICollection<Contract> Contracts { get; set; }

@@ -19,5 +19,8 @@ namespace C03_HeThongTimGiupViec.Repository.Interface
 
         //Update account info
         public bool UpdateAccount(Account account);
+
+        //Get Handyman account have top start 
+        Task<List<Account>> GetHandymanAccountWithTopStar();
     }
 }

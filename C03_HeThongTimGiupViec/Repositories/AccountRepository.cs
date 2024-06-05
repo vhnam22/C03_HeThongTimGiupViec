@@ -2,15 +2,17 @@
 using C03_HeThongTimGiupViec.Repository.Interface;
 using C03_HeThongTimGiupViec.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 namespace C03_HeThongTimGiupViec.Repository
 {
-    public class AccountRepository: IAccountRepository
+    public class AccountRepository : IAccountRepository
     {
         private UserManager<Account> _userManager;
         public readonly SignInManager<Account> _signInManager;
@@ -42,8 +44,7 @@ namespace C03_HeThongTimGiupViec.Repository
             try
             {
                 if (id.IsNullOrEmpty()) return null;
-                Guid accId = Guid.Parse(id);
-                Account acc = _context.Accounts.FirstOrDefault(x => x.AccountId == accId);
+                Account acc = _context.Accounts.FirstOrDefault(x => x.Id == id);
                 return acc;
             }
             catch (Exception ex)
@@ -59,7 +60,7 @@ namespace C03_HeThongTimGiupViec.Repository
             {
                 if (account != null)
                 {
-                    Account acc = GetAccountById(account.AccountId.ToString());
+                    Account acc = GetAccountById(account.Id.ToString());
                     if (acc != null)
                     {
                         acc.Email = account.Email;
@@ -134,7 +135,6 @@ namespace C03_HeThongTimGiupViec.Repository
                 {
                     var admin = new Account()
                     {
-                        AccountId = Guid.NewGuid(),
                         Email = user.Email,
                         SecurityStamp = Guid.NewGuid().ToString(),
                         UserName = user.Email.Split("@")[0],
@@ -168,7 +168,6 @@ namespace C03_HeThongTimGiupViec.Repository
             }
             var user = new Account()
             {
-                AccountId = Guid.NewGuid(),
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
                 UserName = model.Email.Split("@")[0],
@@ -188,6 +187,31 @@ namespace C03_HeThongTimGiupViec.Repository
                 return null;
             }
             return model;
+        }
+
+        //Get Handyman account have top start 
+        public async Task<List<Account>> GetHandymanAccountWithTopStar()
+        {
+            try
+            {
+                List<Account> lst = GetAllAccount();
+                List<Account> result = new List<Account>();
+
+                foreach (var account in lst)
+                {
+                    var roles = await _userManager.GetRolesAsync(account);
+                    if (roles.Contains(UserRole.Host))
+                    {
+                        result.Add(account);
+                    }
+                }
+                result = result.OrderByDescending(x => x.TotalStar).Take(4).ToList();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
