@@ -1,24 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login";
 }
 
-<link rel="stylesheet" href="~/css/login.css">
+<link rel="stylesheet" href="~/css/style.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
-<div class="container">
-    <div class="login-box">
-        <h2>Login</h2>
-        <form action="/account/login" method="post">
-            <div class="textbox">
-                <input type="text" placeholder="UserName" name="email" required>
+<form action="/account/login" method="post" class="login-page d-flex justify-content-center">
+    <div class="login-body">
+        <div class="login-title">Sign In</div>
+        <div class="input-form">
+            <input type="text" placeholder="Email" name="email"/>
+        </div>
+        <div class="input-form">
+            <input type="password" placeholder="Password" name="password"/>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-2">
+            <div class="login-remember">
+                <input class="login-checkbox" type="checkbox">Remember me
             </div>
-            <div class="textbox">
-                <input type="password" placeholder="Password" name="password" required>
+            <div class="forgot-pass">
+                Forgot Password?
             </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="links">
-                <a href="#">Forgot password?</a>
-                <a href="#">Register</a>
-            </div>
-        </form>
+        </div>
+        <div class="login-submit">
+            <input type="submit" value="Sign In" />
+        </div>
+        <div class="text-center">Don't you have an account? <a class="register-link">Register</a></div>
     </div>
-</div>
+</form>
+
+        <div>@ViewBag.Token</div>

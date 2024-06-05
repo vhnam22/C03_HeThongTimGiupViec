@@ -59,12 +59,12 @@ namespace C03_HeThongTimGiupViec.Controllers
             ViewBag.token = token;
 
 
-            // set token for session
-            HttpContext.Session.SetString("Token", token);
+            HttpContext.Session.SetString("JwtToken", token);
+            ViewBag.Token = token;
             return View();
         }
 
-        [Authorize(Roles = $"{UserRole.Admin},{UserRole.Host}")]
+        [CustomAuthorize(UserRole.Admin,UserRole.Host)]
         //[Authorize(Roles = UserRole.Admin)]
         public IActionResult Index()
         {
