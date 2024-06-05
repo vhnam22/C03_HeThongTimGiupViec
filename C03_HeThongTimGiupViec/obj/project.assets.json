@@ -2961,11 +2961,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec.csproj",
+      "projectUniqueName": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec.csproj",
       "projectName": "C03_HeThongTimGiupViec",
-      "projectPath": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec.csproj",
+      "projectPath": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec.csproj",
       "packagesPath": "C:\\Users\\84923\\.nuget\\packages\\",
-      "outputPath": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\obj\\",
+      "outputPath": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\84923\\AppData\\Roaming\\NuGet\\NuGet.Config",

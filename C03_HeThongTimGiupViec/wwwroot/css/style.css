@@ -80,6 +80,9 @@
 .job-detail-container p {
     color: #03a84e;
     margin: 0 !important
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 14px;
+        margin-bottom: 30px;
 }
 
 /*job-container*/

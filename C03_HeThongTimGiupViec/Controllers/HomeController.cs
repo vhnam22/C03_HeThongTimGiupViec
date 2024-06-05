@@ -1,5 +1,7 @@
 ﻿using C03_HeThongTimGiupViec.Models;
-using C03_HeThongTimGiupViec.Services;
+using C03_HeThongTimGiupViec.Repositories;
+using C03_HeThongTimGiupViec.Repositories.Interface;
+using C03_HeThongTimGiupViec.Repository.Interface;
 using C03_HeThongTimGiupViec.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,66 +12,25 @@ namespace C03_HeThongTimGiupViec.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IUserServices _userServices;
-        private readonly C03_HeThongTimGiupViecContext _context;
-        public HomeController(IUserServices userService,C03_HeThongTimGiupViecContext context)
-        {
-            _userServices = userService;
-            _context = context;
+        private readonly IPostRepository _postRepository;
+        private readonly IAccountRepository _accountRepository;
+        public HomeController(IPostRepository postRepository,IAccountRepository accountRepository)
+        {   
+             _postRepository = postRepository;
+            _accountRepository = accountRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            List<Post> posts = _postRepository.GetAllPosts();
+            List<Account> accounts = await _accountRepository.GetHandymanAccountWithTopStar();
+
+            ViewBag.posts = posts;
+            ViewBag.accounts = accounts;
+
             return View();
         }
-
-        public async Task<IActionResult> Register(string email, string userName, string fullName, string address, string password)
-        {
-            RegisterVM model = new RegisterVM()
-            {
-                Email = email,
-                Username = userName,
-                FullName = fullName,
-                Address = address,
-                Password = password
-            };
-            
-            RegisterVM resultModel = await _userServices.Register(model);
-            if (resultModel != null)
-            {
-                ViewBag.Message = "Fail";
-            }
-            ViewBag.Message = "Success";
-            return View("Index");
-        }
-
         
-        public async Task<IActionResult> Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Login(string email, string password)
-        {
-            string token = "Fail";
-            LoginVM model = new LoginVM()
-            {
-                Email = email,
-                Password = password
-            };
-            if(await _userServices.Login(model) != null)
-            {
-                token = await _userServices.Login(model);
-            }
-            ViewBag.token = token;
-
-
-            // set token for session
-            HttpContext.Session.SetString("Token", token);
-            return View();
-        }
-
         [Authorize(Roles = $"{UserRole.Admin},{UserRole.Host}")]
         //[Authorize(Roles = UserRole.Admin)]
         public async Task<List<Account>> AccountList()

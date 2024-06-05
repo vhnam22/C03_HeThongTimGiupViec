@@ -1,12 +1,13 @@
-﻿using C03_HeThongTimGiupViec.ViewModels;
+﻿using C03_HeThongTimGiupViec.Repository.Interface;
+using C03_HeThongTimGiupViec.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
-namespace C03_HeThongTimGiupViec.Services
+namespace C03_HeThongTimGiupViec.Repository
 {
-    public class RoleDataService : IDataService
+    public class RoleDataRepository : IDataRepository
     {
         public readonly IServiceProvider _app;
-        public RoleDataService(IServiceProvider app)
+        public RoleDataRepository(IServiceProvider app)
         {
             _app = app;
         }
