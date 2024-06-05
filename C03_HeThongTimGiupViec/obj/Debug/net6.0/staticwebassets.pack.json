@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\Images\\handyman2.jpg"
     },
     {
+      "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\css\\custom-bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\custom-bootstrap.css"
+    },
+    {
       "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
