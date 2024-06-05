@@ -7,6 +7,9 @@ namespace C03_HeThongTimGiupViec.Repository.Interface
         //Get all services
         public List<Service> GetServices();
 
+        //Get service by id
+        public Service GetServiceById(int id);
+
         //Add new service
         public bool AddService(Service service);
 

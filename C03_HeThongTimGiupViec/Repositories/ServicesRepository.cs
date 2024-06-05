@@ -24,6 +24,20 @@ namespace C03_HeThongTimGiupViec.Repository
             }
         }
 
+        //Get service by id
+        public Service GetServiceById(int id)
+        {
+            try
+            {
+                Service serviceLst = _context.Services.FirstOrDefault(x=> x.ServiceId == id);
+                return serviceLst;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         //Add new service
         public bool AddService(Service service)
         {
