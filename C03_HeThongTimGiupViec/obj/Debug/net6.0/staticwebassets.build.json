@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8COGNdMzhoOR342SrxqFlwHLp4JfH9MjVBjc1nVH4WI=",
+  "Hash": "GxcueWXn+DDIx0hvC5b96t33MqiawrGlaumx7YwcbRQ=",
   "Source": "C03_HeThongTimGiupViec",
   "BasePath": "_content/C03_HeThongTimGiupViec",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\admin.jpg"
+    },
+    {
+      "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\avt_img.jpg",
+      "SourceId": "C03_HeThongTimGiupViec",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\",
+      "BasePath": "_content/C03_HeThongTimGiupViec",
+      "RelativePath": "Images/avt_img.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\avt_img.jpg"
     },
     {
       "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\handyman.png",
