@@ -5,6 +5,8 @@
 .py-common{
     padding: 50px 0;
 }
+
+/*job-container*/
 .home-page .job-container .title-page,
 .home-page .job-container .subtitle-page {
     text-align: center;
@@ -29,24 +31,60 @@
     gap: 10px;
 }
 
-.home-page .job-container .col-content .price {
+.job-container .col-content {
+    background-color: #f4f7f7;
+    border-radius: 5px;
+    padding: 42px 40px 41px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.job-container .col-content .price {
     color: #eb0101;
     line-height: 1.2;
     font-size: 18px;
     font-weight: 500
 }
-.home-page .job-container .col-content .btn-showmore {
+.job-container .col-content .btn-showmore ,
+.job-detail-container .btn-showmore 
+{
     background-color: #03a84e;
     border: 1px solid #03a84e;
     border-radius: 5px;
     color: #fff;
     display: inline-block;
     font-size: 15px;
-    padding: 4px 28px 4px;
+    padding: 8px 28px 8px;
     text-align: center;
+    text-decoration: none;
 }
 
-.home-page .housekeeper-container{
+.job-detail-container .info-header {
+    background-color: #f4f7f7;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 45px 44px 45px 50px;
+}
+
+.job-detail-container p {
+    color: #03a84e;
+    margin: 0 !important
+}
+
+/*job-container*/
+/*housekeeper-container*/
+.home-page .housekeeper-container {
     background: #FFFFFF;
 }
 
@@ -95,8 +133,9 @@
     padding: 8px 12px;
     border-radius: 5px;
 }
+/*housekeeper-container*/
 
-
+/*post-container*/
 .home-page .post-container .col-content {
     background-color: #fff;
     border-radius: 5px;
@@ -108,13 +147,25 @@
     gap: 10px;
     cursor: pointer
 }
-.home-page .post-container .col-content:hover{
+
+.post-container .col-content {
+    background-color: #f4f7f7;
+    border-radius: 5px;
+    padding: 47px 48px 45px;
+    transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer
+}
+.post-container .col-content:hover{
     background-color: #03a84e;
 }
 
-.home-page .post-container .col-content:hover .des p,
-.home-page .post-container .col-content:hover h5,
-.home-page .post-container .col-content:hover p
+.post-container .col-content:hover .des p,
+.post-container .col-content:hover h5,
+.post-container .col-content:hover p
 {
     color: #FFFFFF !important;
 }
@@ -129,21 +180,36 @@
 }
 
 .home-page .post-container .subtitle-page,
-.home-page .post-container .col-content {
+.post-container .col-content {
     color: #656565;
     font-size: 14px;
 }
 
-.home-page .post-container .col-content p {
+.post-container .col-content p {
     color: #03a84e;
     font-size: 15px;
     font-weight: 500;
     margin-bottom: 18px;
 }
 
-.home-page .post-container .col-content .des {
+.post-container .col-content .des {
     color: #656565;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 18px;
 }
+/*post-container*/
+
+/*post-detail*/
+.post-detail-container h2 {
+    text-align: center;
+    line-height: 1.309;
+    font-weight: 700;
+}
+.post-detail-container p {
+    color: #272a33;
+    font-weight: 500;
+    font-size: 15px
+}
+/*post-detail*/
+

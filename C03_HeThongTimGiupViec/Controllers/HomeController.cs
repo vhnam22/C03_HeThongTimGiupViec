@@ -77,5 +77,11 @@ namespace C03_HeThongTimGiupViec.Controllers
             List<Account> lst = _context.Accounts.ToList();
             return lst;
         }
+
+        public async Task<IActionResult> Test()
+        {
+            return View();
+        }
+
     }
 }
