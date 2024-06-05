@@ -1,0 +1,33 @@
+﻿/*pagination*/
+.pagination{
+    gap:10px;
+}
+.page-item.active .page-link {
+    background-color: #03a84e;
+    border-color: #03a84e;
+}
+
+.page-link {
+    color: #03a84e;
+    background: #f4f7f7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500
+}
+
+/*pagination*/
+
+/*.form-control*/
+.form-control{
+
+}
+/*.form-control*/
+
+.btn-outline-success {
+    background: #03a84e;
+    border: #03a84e;
+    color: #FFF;
+    padding: 10px 32px
+}
+

@@ -30,6 +30,19 @@ namespace C03_HeThongTimGiupViec.Controllers
 
             return View();
         }
+        
+        [Authorize(Roles = $"{UserRole.Admin},{UserRole.Host}")]
+        //[Authorize(Roles = UserRole.Admin)]
+        public async Task<List<Account>> AccountList()
+        {
+            List<Account> lst = _context.Accounts.ToList();
+            return lst;
+        }
+
+        public async Task<IActionResult> Test()
+        {
+            return View();
+        }
 
     }
 }
