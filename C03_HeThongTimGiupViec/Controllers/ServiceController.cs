@@ -1,4 +1,7 @@
 ﻿using C03_HeThongTimGiupViec.Models;
+using C03_HeThongTimGiupViec.Repositories;
+using C03_HeThongTimGiupViec.Repositories.Interface;
+using C03_HeThongTimGiupViec.Repository.Interface;
 using C03_HeThongTimGiupViec.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,14 +12,21 @@ namespace C03_HeThongTimGiupViec.Controllers
 {
     public class ServiceController: Controller
     {
+        private readonly IServicesRepository _serviceRepository;
+        public ServiceController(IServicesRepository serviceRepository)
+        {
+            _serviceRepository = serviceRepository;
+        }
         public IActionResult ListService()
         {
-            return View();
+            List<Service> services = _serviceRepository.GetServices();
+            return View(services);
         }
 
-        public IActionResult DetailService()
+        public IActionResult DetailService(int id)
         {
-            return View();
+            Service service = _serviceRepository.GetServiceById(id);
+            return View(service);
         }
     }
 }

@@ -1,22 +1,25 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using C03_HeThongTimGiupViec.Models;
+@model Post
+
 <div class="post-detail-container bg-white">
     <div class="container py-common d-flex flex-column gap-4">
         <div class="d-flex justify-content-center gap-2">
             <p>
-                By Harold Leonard
+                @Model.Account.FullName
             </p>
             <p>-</p>
             <p>
-                03 April, 21
+                @Model.PostDate
             </p>
         </div>
         <h2 >
-            Simple pricing structure you have the flexibility to be able to grow your business in an effective.
+            @Model.Description
         </h2>
         <div>
-            <img src="https://htmldemo.net/finate/finate/assets/img/blog/details1.webp" alt="" />
+            <img src="~/Images/@Model.Account.ProfilePicture" alt="" />
         </div>
     </div>
 </div>

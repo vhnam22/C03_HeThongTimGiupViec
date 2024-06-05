@@ -1,11 +1,15 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using C03_HeThongTimGiupViec.Models;
+@model Service;
+
+
 <div class="job-detail-container bg-white">
     <div class="container py-common d-flex flex-column gap-4">
         <div class="d-flex justify-content-between gap-2 info-header">
             <div class="d-flex flex-column gap-2">
-                <h4>Tìm người giúp việc</h4>
+                <h4>@Model.ServiceName</h4>
                 <p>Address: Hà Đông, Hà Nội</p>
                 <p>Phone number: 0944236243</p> 
             </div>
