@@ -170,14 +170,15 @@ namespace C03_HeThongTimGiupViec.Repository
             {
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = model.Email.Split("@")[0],
+                UserName = model.Username,
                 FullName = model.FullName,
-                Address = "",
+                Address = model.Address,
                 PhoneNumber = "",
                 City = "",
                 ZipCode = "",
-                ProfilePicture = "",
-                Status = 1
+                ProfilePicture = "avt_img.jpg",
+                Status = 1,
+                TotalStar = 0
             };
             var resultCreateUser = await _userManager.CreateAsync(user, model.Password);
             await _userManager.AddToRoleAsync(user, role);

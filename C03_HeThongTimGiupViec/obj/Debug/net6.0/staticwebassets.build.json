@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8COGNdMzhoOR342SrxqFlwHLp4JfH9MjVBjc1nVH4WI=",
+  "Hash": "MU56IMNYDW4faqsTkTRZif2z5fwkFYD7JlpYQcPacok=",
   "Source": "C03_HeThongTimGiupViec",
   "BasePath": "_content/C03_HeThongTimGiupViec",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\C03_HeThongTimGiupViec.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\css\\custom-bootstrap.css",
+      "SourceId": "C03_HeThongTimGiupViec",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\",
+      "BasePath": "_content/C03_HeThongTimGiupViec",
+      "RelativePath": "css/custom-bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\custom-bootstrap.css"
     },
     {
       "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\css\\site.css",
@@ -134,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\admin.jpg"
+    },
+    {
+      "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\avt_img.jpg",
+      "SourceId": "C03_HeThongTimGiupViec",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\",
+      "BasePath": "_content/C03_HeThongTimGiupViec",
+      "RelativePath": "Images/avt_img.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\avt_img.jpg"
     },
     {
       "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\handyman.png",
