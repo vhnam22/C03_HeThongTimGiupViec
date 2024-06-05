@@ -13,7 +13,7 @@ namespace C03_HeThongTimGiupViec.ViewModels
         [Required(ErrorMessage = "FullName is required")]
         public string FullName { get; set; }
 
-        [Required(ErrorMessage = "FullName is required")]
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
 
         [Required(ErrorMessage = "Password   is required")]

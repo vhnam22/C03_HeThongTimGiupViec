@@ -1,4 +1,6 @@
 ﻿using C03_HeThongTimGiupViec.Models;
+using C03_HeThongTimGiupViec.Repositories;
+using C03_HeThongTimGiupViec.Repositories.Interface;
 using C03_HeThongTimGiupViec.Repository.Interface;
 using C03_HeThongTimGiupViec.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -10,14 +12,22 @@ namespace C03_HeThongTimGiupViec.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly C03_HeThongTimGiupViecContext _context;
-        public HomeController(C03_HeThongTimGiupViecContext context)
-        {
-            _context = context;
+        private readonly IPostRepository _postRepository;
+        private readonly IAccountRepository _accountRepository;
+        public HomeController(IPostRepository postRepository,IAccountRepository accountRepository)
+        {   
+             _postRepository = postRepository;
+            _accountRepository = accountRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            List<Post> posts = _postRepository.GetAllPosts();
+            List<Account> accounts = await _accountRepository.GetHandymanAccountWithTopStar();
+
+            ViewBag.posts = posts;
+            ViewBag.accounts = accounts;
+
             return View();
         }
 

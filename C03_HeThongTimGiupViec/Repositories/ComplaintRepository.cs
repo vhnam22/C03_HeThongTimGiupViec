@@ -36,11 +36,10 @@ namespace C03_HeThongTimGiupViec.Repositories
         {
             try
             {
-                Guid accId = Guid.Parse(id);
                 List<Complaint> lst = _context.Complaints
                     .Include(x => x.ComplaintByNavigation)
                     .Include(x => x.ComplaintAgainstNavigation)
-                    .Where(x => x.ComplaintByNavigation.AccountId == accId)
+                    .Where(x => x.ComplaintByNavigation.Id == id)
                     .OrderByDescending(x => x.ComplaintDate)
                     .ToList();
                 return lst;
@@ -56,11 +55,10 @@ namespace C03_HeThongTimGiupViec.Repositories
         {
             try
             {
-                Guid accId = Guid.Parse(id);
                 List<Complaint> lst = _context.Complaints
                     .Include(x => x.ComplaintByNavigation)
                     .Include(x => x.ComplaintAgainstNavigation)
-                    .Where(x => x.ComplaintAgainstNavigation.AccountId == accId)
+                    .Where(x => x.ComplaintAgainstNavigation.Id == id)
                     .OrderByDescending(x => x.ComplaintDate)
                     .ToList();
                 return lst;

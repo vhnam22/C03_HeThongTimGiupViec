@@ -101,7 +101,9 @@ namespace C03_HeThongTimGiupViec.Models
 
                 entity.Property(e => e.ComplaintDate).HasColumnType("datetime");
 
-                entity.Property(e => e.Description).HasColumnType("text");
+                entity.Property(e => e.Description)
+                .HasColumnType("NVARCHAR(MAX)")
+                .IsUnicode(true);
 
                 entity.HasOne(d => d.ResponseComplaint)
                       .WithMany()
@@ -153,7 +155,9 @@ namespace C03_HeThongTimGiupViec.Models
             {
                 entity.Property(e => e.MessageId).HasColumnName("MessageID");
 
-                entity.Property(e => e.MessageText).HasColumnType("text");
+                entity.Property(e => e.MessageText)
+                .HasColumnType("NVARCHAR(MAX)")
+                .IsUnicode(true);
 
                 entity.Property(e => e.ReadOn).HasColumnType("datetime");
 
@@ -194,7 +198,9 @@ namespace C03_HeThongTimGiupViec.Models
             {
                 entity.Property(e => e.PostId).HasColumnName("PostID");
 
-                entity.Property(e => e.Description).HasColumnType("text");
+                entity.Property(e => e.Description)
+                .HasColumnType("NVARCHAR(MAX)")
+                .IsUnicode(true);
 
                 entity.Property(e => e.PostDate).HasColumnType("datetime");
                 entity.Property(e => e.Price).HasColumnType("decimal(18,2)");
@@ -218,7 +224,9 @@ namespace C03_HeThongTimGiupViec.Models
             {
                 entity.Property(e => e.ReviewId).HasColumnName("ReviewID");
 
-                entity.Property(e => e.Comment).HasColumnType("text");
+                entity.Property(e => e.Comment)
+                .HasColumnType("NVARCHAR(MAX)")
+                .IsUnicode(true);
 
                 entity.Property(e => e.ReviewDate).HasColumnType("datetime");
 
@@ -243,11 +251,13 @@ namespace C03_HeThongTimGiupViec.Models
             {
                 entity.Property(e => e.ServiceId).HasColumnName("ServiceID");
 
-                entity.Property(e => e.Description).HasColumnType("text");
+                entity.Property(e => e.Description)
+                .HasColumnType("NVARCHAR(MAX)")
+                .IsUnicode(true);
 
                 entity.Property(e => e.ServiceName)
                     .HasMaxLength(255)
-                    .IsUnicode(false);
+                    .IsUnicode(true);
             });
 
             modelBuilder.Entity<Slide>(entity =>

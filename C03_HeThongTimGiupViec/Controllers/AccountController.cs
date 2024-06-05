@@ -15,7 +15,11 @@ namespace C03_HeThongTimGiupViec.Controllers
         {
             _accRep = accRep;
         }
-
+        public async Task<IActionResult> Register()
+        {
+            return View();
+        }
+        [HttpPost]
         public async Task<IActionResult> Register(string email, string userName, string fullName, string address, string password, string role)
         {
             RegisterVM model = new RegisterVM()
