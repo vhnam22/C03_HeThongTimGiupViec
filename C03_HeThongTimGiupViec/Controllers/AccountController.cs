@@ -23,28 +23,24 @@ namespace C03_HeThongTimGiupViec.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Register(string email, string username, string fullName, string address, string password, int role)
+        public async Task<IActionResult> Register(string email, string userName, string fullName, string address, string password, string role)
         {
             RegisterVM model = new RegisterVM()
             {
                 Email = email,
-                Username = username,
+                Username = userName,
                 FullName = fullName,
                 Address = address,
                 Password = password
             };
-            string accRole = "";
-            if(role == 2)
-            {
-                accRole = UserRole.Host;
-            }else accRole = UserRole.Handyman;
 
-            RegisterVM resultModel = await _accRep.Register(model, accRole);
-            if (resultModel == null)
+            RegisterVM resultModel = await _accRep.Register(model, role);
+            if (resultModel != null)
             {
                 ViewBag.Message = "Fail";
-            }else ViewBag.Message = "Successful, you can login.";
-            return View();
+            }
+            ViewBag.Message = "Success";
+            return View("Index");
         }
 
 

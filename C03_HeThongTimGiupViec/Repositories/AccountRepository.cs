@@ -172,9 +172,9 @@ namespace C03_HeThongTimGiupViec.Repository
             {
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = model.Username,
+                UserName = model.Email.Split("@")[0],
                 FullName = model.FullName,
-                Address = model.Address,
+                Address = "",
                 PhoneNumber = "",
                 City = "",
                 ProfilePicture = "avt_img.jpg",

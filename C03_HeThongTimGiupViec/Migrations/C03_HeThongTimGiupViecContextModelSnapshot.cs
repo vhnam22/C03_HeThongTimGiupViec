@@ -46,6 +46,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(255)
                         .IsUnicode(false)
                         .HasColumnType("varchar(255)");
@@ -116,8 +117,7 @@ namespace C03_HeThongTimGiupViec.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.HasIndex(new[] { "Email" }, "UQ__Accounts__A9D10534B6EC2145")
-                        .IsUnique()
-                        .HasFilter("[Email] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
