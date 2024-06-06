@@ -73,10 +73,6 @@ namespace C03_HeThongTimGiupViec.Models
 
                 entity.Property(e => e.UserName).HasMaxLength(100);
 
-                entity.Property(e => e.ZipCode)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
                 entity.HasMany(d => d.Services)
                     .WithMany(p => p.Accounts)
                     .UsingEntity<Dictionary<string, object>>(

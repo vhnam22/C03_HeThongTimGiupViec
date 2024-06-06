@@ -2,7 +2,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using C03_HeThongTimGiupViec.Models;
+@inject IHttpContextAccessor _httpContextAccessor;
+@{
 
+    HttpContext httpContext = _httpContextAccessor.HttpContext;
+    string userInfo = httpContext.Session.GetString("JwtToken");
+}
+<input hidden value="@userInfo" id="userInfo" />
 <div class="home-page">
     <div class="job-container">
         <div class="container py-common">
@@ -82,3 +88,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    var userInfo = document.getElementById('userInfo').value;
+    console.log(userInfo)
+    if (userInfo) {
+        account = JSON.parse(atob(userInfo.split(".")[1]));
+        
+        sessionStorage.setItem('account', JSON.stringify(account));
+        var retrievedAccount = JSON.parse(sessionStorage.getItem('account'));
+        console.log(retrievedAccount);
+    }
+</script>

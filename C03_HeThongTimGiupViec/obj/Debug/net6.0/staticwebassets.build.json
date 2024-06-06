@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MU56IMNYDW4faqsTkTRZif2z5fwkFYD7JlpYQcPacok=",
+  "Hash": "Np8co5s2viwSGjDgdDxNEgc+ChDUVRkqwA/qQRjcEes=",
   "Source": "C03_HeThongTimGiupViec",
   "BasePath": "_content/C03_HeThongTimGiupViec",
   "Mode": "Default",
@@ -202,6 +202,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\handyman2.jpg"
+    },
+    {
+      "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\Nitro_Wallpaper_01_3840x2400.jpg",
+      "SourceId": "C03_HeThongTimGiupViec",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\",
+      "BasePath": "_content/C03_HeThongTimGiupViec",
+      "RelativePath": "Images/Nitro_Wallpaper_01_3840x2400.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Nitro_Wallpaper_01_3840x2400.jpg"
+    },
+    {
+      "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\Nitro_Wallpaper_04_3840x2400.jpg",
+      "SourceId": "C03_HeThongTimGiupViec",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\",
+      "BasePath": "_content/C03_HeThongTimGiupViec",
+      "RelativePath": "Images/Nitro_Wallpaper_04_3840x2400.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Nitro_Wallpaper_04_3840x2400.jpg"
     },
     {
       "Identity": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\js\\site.js",

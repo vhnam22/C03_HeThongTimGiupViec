@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\C03_HeThongTimGiupViec.bundle.scp.css"
     },
     {
+      "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\Nitro_Wallpaper_01_3840x2400.jpg",
+      "PackagePath": "staticwebassets\\Images\\Nitro_Wallpaper_01_3840x2400.jpg"
+    },
+    {
+      "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\Nitro_Wallpaper_04_3840x2400.jpg",
+      "PackagePath": "staticwebassets\\Images\\Nitro_Wallpaper_04_3840x2400.jpg"
+    },
+    {
       "Id": "D:\\1_hotrodoan\\C03_HeThongTimGiupViec_New\\C03_HeThongTimGiupViec\\C03_HeThongTimGiupViec\\wwwroot\\Images\\admin.jpg",
       "PackagePath": "staticwebassets\\Images\\admin.jpg"
     },

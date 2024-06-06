@@ -4,6 +4,7 @@ using C03_HeThongTimGiupViec.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C03_HeThongTimGiupViec.Migrations
 {
     [DbContext(typeof(C03_HeThongTimGiupViecContext))]
-    partial class C03_HeThongTimGiupViecContextModelSnapshot : ModelSnapshot
+    [Migration("20240606021350_addCountryToAccount")]
+    partial class addCountryToAccount
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,10 +94,10 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Status")
+                    b.Property<int>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("TotalStar")
+                    b.Property<int>("TotalStar")
                         .HasColumnType("int");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -104,6 +106,11 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ZipCode")
+                        .HasMaxLength(20)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 

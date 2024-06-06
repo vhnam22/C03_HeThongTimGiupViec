@@ -23,10 +23,10 @@ namespace C03_HeThongTimGiupViec.Models
         public string? PhoneNumber { get; set; }
         public string? City { get; set; }
         public string? Address { get; set; }
-        public string? ZipCode { get; set; }
         public string? ProfilePicture { get; set; }
-        public int Status { get; set; }
-        public int TotalStar { get; set; }
+        public int? Status { get; set; }
+        public int? TotalStar { get; set; }
+        public string? Country { get; set; }
         public virtual ICollection<Complaint> ComplaintComplaintAgainstNavigations { get; set; }
         public virtual ICollection<Complaint> ComplaintComplaintByNavigations { get; set; }
         public virtual ICollection<Contract> Contracts { get; set; }

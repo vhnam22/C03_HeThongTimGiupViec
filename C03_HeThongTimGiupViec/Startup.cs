@@ -42,6 +42,8 @@ namespace C03_HeThongTimGiupViec
                 options.Cookie.HttpOnly = true; 
                 options.Cookie.IsEssential = true; 
             });
+            services.AddHttpContextAccessor();
+
             services.AddTransient<IDataRepository, RoleDataRepository>();
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IServicesRepository, ServicesRepository>();
