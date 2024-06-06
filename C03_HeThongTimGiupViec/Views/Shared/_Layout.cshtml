@@ -12,8 +12,8 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light position-fixed w-100">
+            <div class="container bg-white px-3 py-2 box-shadow">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HeThongTimGiupViec</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a href="/" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a href="/" class="nav-link text-dark text active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="/service/ListService" class="nav-link text-dark" asp-area="" asp-controller="Service" asp-action="Privacy">Service</a>
@@ -31,17 +31,37 @@
                             <a href="/post/ListPost" class="nav-link text-dark" asp-area="" asp-controller="Post" asp-action="Privacy">Post</a>
                         </li>
                     </ul>
-                    <a href="/account/login" class="btn btn-outline-success" type="submit">Login</a>
+                    <a href="/account/login" class="btn btn-outline-success text-white" type="submit">Login</a>
                 </div>
             </div>
         </nav>
+        <div class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="d-flex flex-column justify-content-center gap-4 h-100 px-5">
+                            <h1 class="text-white">We have jobs that match what you want</h1>
+                            <p class="text-white">You can find the best jobs here</p>
+                            <div class="d-flex">
+                                <a href="/service/ListService" class="explore">Explore now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 py-4">
+                        <img src="~/images/home-8-banner-1.png" class="w-100 h-100" style="object-fit:cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    <div class="footer">
 
+    </div>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - C03_HeThongTimGiupViec - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

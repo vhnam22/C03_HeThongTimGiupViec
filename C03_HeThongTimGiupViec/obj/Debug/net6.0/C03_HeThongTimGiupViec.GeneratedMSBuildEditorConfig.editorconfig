@@ -9,41 +9,43 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = C03_HeThongTimGiupViec
 build_property.RootNamespace = C03_HeThongTimGiupViec
-build_property.ProjectDir = D:\1_hotrodoan\C03_HeThongTimGiupViec_New\C03_HeThongTimGiupViec\C03_HeThongTimGiupViec\
+build_property.ProjectDir = D:\TechByteDeveloper\HeThongTimViec\C03_HeThongTimGiupViec\C03_HeThongTimGiupViec\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\1_hotrodoan\C03_HeThongTimGiupViec_New\C03_HeThongTimGiupViec\C03_HeThongTimGiupViec
+build_property.MSBuildProjectDirectory = D:\TechByteDeveloper\HeThongTimViec\C03_HeThongTimGiupViec\C03_HeThongTimGiupViec
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/1_hotrodoan/C03_HeThongTimGiupViec_New/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Account/Login.cshtml]
+[D:/TechByteDeveloper/HeThongTimViec/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/1_hotrodoan/C03_HeThongTimGiupViec_New/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Account/Register.cshtml]
+[D:/TechByteDeveloper/HeThongTimViec/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/1_hotrodoan/C03_HeThongTimGiupViec_New/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Home/Index.cshtml]
+[D:/TechByteDeveloper/HeThongTimViec/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/1_hotrodoan/C03_HeThongTimGiupViec_New/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Post/DetailPost.cshtml]
+[D:/TechByteDeveloper/HeThongTimViec/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Post/DetailPost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxEZXRhaWxQb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/1_hotrodoan/C03_HeThongTimGiupViec_New/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Post/ListPost.cshtml]
+[D:/TechByteDeveloper/HeThongTimViec/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Post/ListPost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxMaXN0UG9zdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/1_hotrodoan/C03_HeThongTimGiupViec_New/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Service/DetailService.cshtml]
+[D:/TechByteDeveloper/HeThongTimViec/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Service/DetailService.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxEZXRhaWxTZXJ2aWNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/1_hotrodoan/C03_HeThongTimGiupViec_New/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Service/ListService.cshtml]
+[D:/TechByteDeveloper/HeThongTimViec/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Service/ListService.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxMaXN0U2VydmljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/1_hotrodoan/C03_HeThongTimGiupViec_New/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Shared/_Layout.cshtml]
+[D:/TechByteDeveloper/HeThongTimViec/C03_HeThongTimGiupViec/C03_HeThongTimGiupViec/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-nb7ty4w4d0
