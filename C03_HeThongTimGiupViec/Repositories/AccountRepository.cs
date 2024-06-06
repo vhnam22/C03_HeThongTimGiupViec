@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace C03_HeThongTimGiupViec.Repository
 {
@@ -63,16 +65,16 @@ namespace C03_HeThongTimGiupViec.Repository
                     Account acc = GetAccountById(account.Id.ToString());
                     if (acc != null)
                     {
-                        acc.Email = account.Email;
-                        acc.UserName = account.UserName;
-                        acc.PasswordHash = account.PasswordHash;
-                        acc.UserName = account.UserName;
-                        acc.FullName = account.FullName;
-                        acc.PhoneNumber = account.PhoneNumber;
-                        acc.City = account.City;
-                        acc.Address = account.Address;
-                        acc.ProfilePicture = account.ProfilePicture;
-                        acc.Status = account.Status;
+                        acc.Email = account.Email != null ? account.Email : acc.Email;
+                        acc.UserName = account.UserName != null ? account.UserName : acc.UserName;
+                        acc.PasswordHash = account.PasswordHash != null ? account.PasswordHash : acc.PasswordHash;
+                        acc.FullName = account.FullName != null ? account.FullName : acc.FullName;
+                        acc.PhoneNumber = account.PhoneNumber != null ? account.PhoneNumber : acc.PhoneNumber;
+                        acc.City = account.City != null ? account.City : acc.City;
+                        acc.Address = account.Address != null ? account.Address : acc.Address;
+                        acc.ProfilePicture = account.ProfilePicture != null ? account.ProfilePicture : acc.ProfilePicture;
+                        acc.Status = account.Status != null ? account.Status : acc.Status;
+                        acc.Country = account.Country != null ? account.Country : acc.Country;
                         _context.SaveChanges();
                         return true;
                     }
@@ -142,9 +144,9 @@ namespace C03_HeThongTimGiupViec.Repository
                         Address = "",
                         PhoneNumber = "",
                         City = "",
-                        ZipCode = "",
                         ProfilePicture = "",
-                        Status = 1
+                        Status = 1, 
+                        Country = ""
                     };
                     await _userManager.CreateAsync(admin, _adminAccount.Password);
                     await _userManager.AddToRoleAsync(admin, "Admin");
@@ -170,12 +172,11 @@ namespace C03_HeThongTimGiupViec.Repository
             {
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = model.Username,
+                UserName = model.Email.Split("@")[0],
                 FullName = model.FullName,
-                Address = model.Address,
+                Address = "",
                 PhoneNumber = "",
                 City = "",
-                ZipCode = "",
                 ProfilePicture = "avt_img.jpg",
                 Status = 1,
                 TotalStar = 0

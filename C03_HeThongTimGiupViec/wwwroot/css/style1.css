@@ -115,3 +115,44 @@
             background: #03a84e;
             color: #fff;
         }
+
+/* Profile */
+.profile-page {
+    background: #03a84e;
+}
+
+    .profile-page .form-control:focus {
+        box-shadow: none;
+        border-color: #03a84e
+    }
+
+    .profile-page .profile-button {
+        background: #03a84e;
+        box-shadow: none;
+        border: none
+    }
+
+        .profile-page .profile-button:hover {
+            background: #025D2B;
+        }
+
+        .profile-page .profile-button:active {
+            background: #025D2B;
+            box-shadow: none
+        }
+
+    .profile-page .back:hover {
+        color: #025D2B;
+        cursor: pointer
+    }
+
+    .profile-page .labels {
+        font-size: 11px
+    }
+
+    .profile-page .add-experience:hover {
+        background: #025D2B;
+        color: #fff;
+        cursor: pointer;
+        border: solid 1px #03a84e;
+    }

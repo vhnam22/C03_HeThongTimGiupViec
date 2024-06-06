@@ -14,25 +14,33 @@ namespace C03_HeThongTimGiupViec.Controllers
     {
         private readonly IPostRepository _postRepository;
         private readonly IAccountRepository _accountRepository;
-        private readonly IServicesRepository _servicesRepository;
-        public HomeController(IPostRepository postRepository, IAccountRepository accountRepository
-        , IServicesRepository servicesRepository)
-        {
-            _postRepository = postRepository;
+        public HomeController(IPostRepository postRepository,IAccountRepository accountRepository)
+        {   
+             _postRepository = postRepository;
             _accountRepository = accountRepository;
-            _servicesRepository = servicesRepository;
         }
 
         public async Task<IActionResult> Index()
         {
             List<Post> posts = _postRepository.GetAllPosts();
             List<Account> accounts = await _accountRepository.GetHandymanAccountWithTopStar();
-            List<Service> services = _servicesRepository.GetServices();
 
             ViewBag.posts = posts;
             ViewBag.accounts = accounts;
-            ViewBag.services = services;
 
+            return View();
+        }
+        
+        [Authorize(Roles = $"{UserRole.Admin},{UserRole.Host}")]
+        //[Authorize(Roles = UserRole.Admin)]
+        public async Task<List<Account>> AccountList()
+        {
+            List<Account> lst = _context.Accounts.ToList();
+            return lst;
+        }
+
+        public async Task<IActionResult> Test()
+        {
             return View();
         }
 

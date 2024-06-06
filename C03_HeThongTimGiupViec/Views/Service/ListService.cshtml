@@ -1,10 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@using C03_HeThongTimGiupViec.Models;
-@model List<Service>
-
 <div class="job-container bg-white">
     <div class="container py-common d-flex flex-column gap-5">
         <form class="d-flex">
@@ -13,20 +9,78 @@
             <button class="btn btn-outline-success" type="button">Search</button>
         </form>
         <div class="row gx-4 gy-4">
-            @foreach (Service s in Model)
-            {
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="col-content">
-                        <div class="">
-                            <h4>@s.ServiceName</h4>
-                        </div>
-                        <p>@s.Description</p>
-                        <div class="d-flex justify-content-end align-items-center">
-                            <a href="/service/DetailService?id=@s.ServiceId" class="btn-showmore">View more</a>
-                        </div>
+            <div class="col-4">
+                <div class="col-content">
+                    <div class="">
+                        <h4>Tìm người giúp việc</h4>
+                        <p>Address: Hà Đông, Hà Nội</p>
+                    </div>
+                    <p>when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="/service/DetailService" class="btn-showmore">View more</a>
                     </div>
                 </div>
-            }
+            </div>
+            <div class="col-4">
+                <div class="col-content">
+                    <div class="">
+                        <h4>Tìm người giúp việc</h4>
+                        <p>Address: Hà Đông, Hà Nội</p>
+                    </div>
+                    <p>when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="/service/DetailService" class="btn-showmore">View more</a>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-4">
+                <div class="col-content">
+                    <div class="">
+                        <h4>Tìm người giúp việc</h4>
+                        <p>Address: Hà Đông, Hà Nội</p>
+                    </div>
+                    <p>when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="/service/DetailService" class="btn-showmore">View more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="col-content">
+                    <div class="">
+                        <h4>Tìm người giúp việc</h4>
+                        <p>Address: Hà Đông, Hà Nội</p>
+                    </div>
+                    <p>when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="/service/DetailService" class="btn-showmore">View more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="col-content">
+                    <div class="">
+                        <h4>Tìm người giúp việc</h4>
+                        <p>Address: Hà Đông, Hà Nội</p>
+                    </div>
+                    <p>when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="/service/DetailService" class="btn-showmore">View more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="col-content">
+                    <div class="">
+                        <h4>Tìm người giúp việc</h4>
+                        <p>Address: Hà Đông, Hà Nội</p>
+                    </div>
+                    <p>when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <a href="/service/DetailService" class="btn-showmore">View more</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <nav aria-label="Page navigation example">
             <ul class="pagination">

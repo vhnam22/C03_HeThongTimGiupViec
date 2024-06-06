@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C03_HeThongTimGiupViec.Migrations
 {
     [DbContext(typeof(C03_HeThongTimGiupViecContext))]
-    [Migration("20240605101955_fixregister")]
-    partial class fixregister
+    [Migration("20240606022058_updatePropertyToAccount")]
+    partial class updatePropertyToAccount
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,6 +42,9 @@ namespace C03_HeThongTimGiupViec.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -91,10 +94,10 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Status")
+                    b.Property<int?>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalStar")
+                    b.Property<int?>("TotalStar")
                         .HasColumnType("int");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -103,11 +106,6 @@ namespace C03_HeThongTimGiupViec.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ZipCode")
-                        .HasMaxLength(20)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 

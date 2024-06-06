@@ -1,0 +1,122 @@
+﻿@using C03_HeThongTimGiupViec.Models;
+@model Account
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js">
+<link rel="stylesheet" href="~/lib/jquery/dist/jquery.min.js">
+<link rel="stylesheet" href="~/css/style1.css">
+
+<div class="profile-page">
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <form action="/account/profile" method="post" class="col-md-8 row">
+                <div class="col-md-4 border-right" style="border-right: 1px solid #ccc;">
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                        <img class="rounded-circle preview-image mt-5" width="150px" src="~/Images/@Model.ProfilePicture" >
+                        <span class="font-weight-bold">@Model.UserName</span>
+                        <span class="text-black-50">@Model.Email</span>
+                        <span> </span>
+                    </div>
+                </div>
+                <div class="col-md-8 border-right" style="border-right: 1px solid #ccc;">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Profile Settings</h4>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Fullname</label><input type="text" class="form-control" name="FullName" placeholder="enter fullname" value="@Model.FullName"></div>
+                            <div class="col-md-12"><label class="labels">UserName</label><input type="text" class="form-control" name="Username" placeholder="enter username" value="@Model.UserName"></div>
+                            <input type="text" hidden name="Email" value="@Model.Email">
+                            <input type="text" hidden name="Id" value="@Model.Id">
+                            <div class="col-md-12"><label class="labels">Avatar</label></div>
+                            <div class="upload-img">
+                                <input type="file" class="imageInput mt-1" accept="image/*" />
+                                <!-- lấy tên ảnh -->
+                                <input type="text" id="file-name" value="@Model.ProfilePicture" name="ProfilePicture" hidden />
+                            </div>
+                            <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" name="PhoneNumber" placeholder="enter phone number" value="@Model.PhoneNumber"></div>
+                            <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" name="Address" placeholder="enter address" value="@Model.Address"></div>
+                            <div class="col-md-12"><label class="labels">City</label><input type="text" class="form-control" name="City" placeholder="enter city" value="@Model.City"></div>
+                            <div class="col-md-12"><label class="labels">Country</label><input type="text" class="form-control" name="Country" placeholder="enter country" value="@Model.Country"></div>
+                        </div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                        @if(ViewBag.Status != null)
+                        {
+                            @if (ViewBag.Status = true)
+                            {
+                                <h5 class="mt-4 text-success text-center">Update profile successful.</h5>
+                            }
+                            else
+                            {
+                                <h5 class="mt-3 text-danger text-center">Update profile fail.</h5>
+                            }
+                        }
+                    </div>
+                </div>
+            </form>
+            <form action="/account/ChangePassword" method="post" class="col-md-4">
+                <div class="p-3 py-5">
+                    <input type="text" hidden name="Id" value="@Model.Id">
+                    <div class="d-flex justify-content-between align-items-center experience"><span>Change password</span></div><br>
+                    <div class="col-md-12"><label class="labels">Old password</label><input name="oldPass" type="password" class="form-control" placeholder="enter old password" value="@ViewBag.oldPass"></div> <br>
+                    <div class="col-md-12"><label class="labels">New password</label><input name="newPass" type="password" class="form-control" placeholder="enter new password" value="@ViewBag.newPass"></div> <br>
+                    <div class="col-md-12"><label class="labels">Confirm password</label><input name="rePass" type="password" class="form-control" placeholder="enter confirm password" value="@ViewBag.rePass"></div>
+                    <div class="mt-3 d-flex justify-content-center">
+                        <button type="submit" class="border px-3 p-1 add-experience px-5"><i class="fa fa-plus"></i>&nbsp;Save</button>
+                    </div>
+                    @if(ViewBag.Fail != null)
+                    {
+                        <h5 class="mt-3 text-danger text-center">@ViewBag.Fail</h5>
+                    }
+                    @if (ViewBag.Success != null)
+                    {
+                        <h5 class="mt-4 text-success text-center">@ViewBag.Success</h5>
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.imageInput').addEventListener('change', function (event) {
+        const imageInput = event.target;
+        const previewImage = document.querySelector('.preview-image');
+        const selectedFileName = document.getElementById('file-name');
+
+        if (imageInput.files && imageInput.files[0]) {
+
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                previewImage.src = e.target.result;
+            };
+
+            reader.readAsDataURL(imageInput.files[0]);
+            selectedFileName.value = imageInput.files[0].name;
+
+            const file = imageInput.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/Upload/Upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Handle success - update hidden input with the file path
+                console.log('File uploaded successfully:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while uploading the file.');
+            });
+        }
+    });
+</script>

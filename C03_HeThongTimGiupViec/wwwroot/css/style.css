@@ -5,30 +5,6 @@
 .py-common{
     padding: 50px 0;
 }
-/*banner*/
-.banner {
-    background: linear-gradient(180deg, #23ce6b 50%, #1ca254 100%) repeat-x !important;
-}
-.banner h1 {
-    font-weight: 600;
-    line-height: 1.1;
-    font-size: 60px
-}
-
-.banner p{
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.banner .explore{
-    background: #FFF;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #03a84e;
-    font-weight:500
-}
-/*banner*/
 
 /*job-container*/
 .home-page .job-container .title-page,
@@ -53,7 +29,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 100%
 }
 
 .job-container .col-content {
@@ -67,7 +42,12 @@
     gap: 10px;
 }
 
-
+.job-container .col-content .price {
+    color: #eb0101;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 500
+}
 .job-container .col-content .btn-showmore ,
 .job-detail-container .btn-showmore 
 {
@@ -136,7 +116,6 @@
     flex-direction: column;
     align-items:center;
     gap: 12px;
-    height:100%
 }
 
 .home-page .housekeeper-container .col-content:hover {
@@ -181,8 +160,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    cursor: pointer;
-    height: 100%
+    cursor: pointer
 }
 .post-container .col-content:hover{
     background-color: #03a84e;
@@ -190,10 +168,7 @@
 
 .post-container .col-content:hover .des p,
 .post-container .col-content:hover h5,
-.post-container .col-content:hover p,
-.post-container .col-content:hover .title,
-.post-container .col-content:hover .price,
-.post-container .col-content:hover .post-date
+.post-container .col-content:hover p
 {
     color: #FFFFFF !important;
 }
@@ -220,26 +195,12 @@
     margin-bottom: 18px;
 }
 
-.post-container .col-content .title{
-    font-size: 22px;
-    font-weight: 500
-}
 .post-container .col-content .des {
     color: #656565;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 18px;
 }
-.post-container .col-content .price {
-    color: #656565;
-    line-height: 1.2;
-    font-size: 18px;
-    font-weight: 500;
-/*    border: 1px solid #ee2929;
-    border-radius: 4px;
-    padding: 10px 20px;*/
-}
-
 /*post-container*/
 
 /*post-detail*/
@@ -249,9 +210,9 @@
     font-weight: 700;
 }
 .post-detail-container p {
-    color: #ee2929;
+    color: #272a33;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 15px
 }
 /*post-detail*/
 

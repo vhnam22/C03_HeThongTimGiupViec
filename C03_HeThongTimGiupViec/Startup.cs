@@ -42,6 +42,8 @@ namespace C03_HeThongTimGiupViec
                 options.Cookie.HttpOnly = true; 
                 options.Cookie.IsEssential = true; 
             });
+            services.AddHttpContextAccessor();
+
             services.AddTransient<IDataRepository, RoleDataRepository>();
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IServicesRepository, ServicesRepository>();
@@ -102,10 +104,7 @@ namespace C03_HeThongTimGiupViec
         {
             services.Configure<JwtSetting>(Configuration.GetSection("JwtSetting"));
             services.Configure<AdminAccount>(Configuration.GetSection("AdminAccount"));
-            services.AddIdentity<Account, IdentityRole>(options =>
-            {
-                options.User.RequireUniqueEmail = true; 
-            }).AddEntityFrameworkStores<C03_HeThongTimGiupViecContext>()
+            services.AddIdentity<Account, IdentityRole>().AddEntityFrameworkStores<C03_HeThongTimGiupViecContext>()
                     .AddDefaultTokenProviders();
             services.AddIdentityCore<Account>();
 

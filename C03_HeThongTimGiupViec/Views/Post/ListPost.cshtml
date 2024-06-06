@@ -1,8 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using C03_HeThongTimGiupViec.Models;
-
 <div class="post-container bg-white">
     <div class="container py-common d-flex flex-column gap-5">
         <form class="d-flex">
@@ -11,29 +9,102 @@
             <button class="btn btn-outline-success" type="button">Search</button>
         </form>
         <div class="row gx-4 gy-4">
-            @foreach(Post p in ViewBag.posts)
-            {
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <a href="/post/DetailPost?id=@p.PostId" class="text-decoration-none">
-                        <div class="col-content">
-                            <div class="row gx-3">
-                                <div class="col-4">
-                                    <img src="~/Images/@p.Account.ProfilePicture" alt="" style="width:100%; height: 100%" />
-                                </div>
-                                <div class="col-8">
-                                    <div class="d-flex flex-column align-items-start">
-                                        <h5>@p.Account.FullName</h5>
-                                        <p>Address: @p.Address</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="des">
-                                <p> @p.Description </p>
+            <div class="col-4">
+                <a href="/post/DetailPost" class="text-decoration-none">
+                    <div class="col-content">
+                        <div class="d-flex justify-content-start align-items-center gap-4">
+                            <img src="https://htmldemo.net/finate/finate/assets/img/testimonial/2.webp" alt="" />
+                            <div class="d-flex flex-column align-items-start">
+                                <h5>Lê Văn Khải</h5>
+                                <p>Address: Hà Đông, Hà Nội</p>
                             </div>
                         </div>
-                    </a>
-                </div>
-            }
+                        <div class="des">
+                            <p> when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to. when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="/post/DetailPost" class="text-decoration-none">
+                    <div class="col-content">
+                        <div class="d-flex justify-content-start align-items-center gap-4">
+                            <img src="https://htmldemo.net/finate/finate/assets/img/testimonial/2.webp" alt="" />
+                            <div class="d-flex flex-column align-items-start">
+                                <h5>Lê Văn Khải</h5>
+                                <p>Address: Hà Đông, Hà Nội</p>
+                            </div>
+                        </div>
+                        <div class="des">
+                            <p> when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to. when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="/post/DetailPost" class="text-decoration-none">
+                    <div class="col-content">
+                        <div class="d-flex justify-content-start align-items-center gap-4">
+                            <img src="https://htmldemo.net/finate/finate/assets/img/testimonial/2.webp" alt="" />
+                            <div class="d-flex flex-column align-items-start">
+                                <h5>Lê Văn Khải</h5>
+                                <p>Address: Hà Đông, Hà Nội</p>
+                            </div>
+                        </div>
+                        <div class="des">
+                            <p> when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to. when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="/post/DetailPost" class="text-decoration-none">
+                    <div class="col-content">
+                        <div class="d-flex justify-content-start align-items-center gap-4">
+                            <img src="https://htmldemo.net/finate/finate/assets/img/testimonial/2.webp" alt="" />
+                            <div class="d-flex flex-column align-items-start">
+                                <h5>Lê Văn Khải</h5>
+                                <p>Address: Hà Đông, Hà Nội</p>
+                            </div>
+                        </div>
+                        <div class="des">
+                            <p> when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to. when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="/post/DetailPost" class="text-decoration-none">
+                    <div class="col-content">
+                        <div class="d-flex justify-content-start align-items-center gap-4">
+                            <img src="https://htmldemo.net/finate/finate/assets/img/testimonial/2.webp" alt="" />
+                            <div class="d-flex flex-column align-items-start">
+                                <h5>Lê Văn Khải</h5>
+                                <p>Address: Hà Đông, Hà Nội</p>
+                            </div>
+                        </div>
+                        <div class="des">
+                            <p> when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to. when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="/post/DetailPost" class="text-decoration-none">
+                    <div class="col-content">
+                        <div class="d-flex justify-content-start align-items-center gap-4">
+                            <img src="https://htmldemo.net/finate/finate/assets/img/testimonial/2.webp" alt="" />
+                            <div class="d-flex flex-column align-items-start">
+                                <h5>Lê Văn Khải</h5>
+                                <p>Address: Hà Đông, Hà Nội</p>
+                            </div>
+                        </div>
+                        <div class="des">
+                            <p> when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to. when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
         <nav aria-label="Page navigation example">
             <ul class="pagination">
